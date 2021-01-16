@@ -1,0 +1,24 @@
+{
+  "name": "breastfeeding_awareness_storyboard",
+  "version": "1.0.0",
+  "description": "a choose your own adventure style storyboard to raise awareness about breastfeeding and other issues new mothers face",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azhang4216/breastfeeding_awareness_storyboard.git"
+  },
+  "author": "Barkin Cavdaroglu, Vi Tran, Jessie Wang, Angela Zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azhang4216/breastfeeding_awareness_storyboard/issues"
+  },
+  "homepage": "https://github.com/azhang4216/breastfeeding_awareness_storyboard#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
