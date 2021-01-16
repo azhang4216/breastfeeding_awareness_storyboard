@@ -1,0 +1,46 @@
+<%- include("header") -%>
+
+<% const renderMoms = (mom) => { %>
+  <div class="character-container">
+    <h3><%= mom.name %></h3>
+    <div>
+      <div class="row">
+        <p>Budget:</p>
+        <p><%= mom.budget %></p>
+      </div>
+      <div class="row">
+        <p>Marital Status:</p>
+        <p><%= mom.maritalStatus %></p>
+      </div>
+      <div class="row">
+        <p># of children:</p>
+        <p><%= mom.numChildren %></p>
+      </div>
+      <div class="row">
+        <p>Occupation:</p>
+        <p><%= mom.occupation %></p>
+      </div>
+      <div class="row">
+        <p>Education Level:</p>
+        <p><%= mom.education %></p>
+      </div>
+      <div class="row">
+        <p>Parents location:</p>
+        <p><%= mom.parentsLoc %></p>
+      </div>
+    </div>
+  </div>
+<% } %>
+
+
+<body>
+    <h2>Start your experience as...</h2>
+    <div>
+      <% momList.forEach(mom =>{ %>
+        <%= renderMoms(mom); %>
+      <% }) %>
+    </div>
+
+</body>
+
+<%- include("footer") -%>

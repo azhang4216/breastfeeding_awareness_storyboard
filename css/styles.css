@@ -140,3 +140,12 @@ body {
     line-height: 150%;
     color: #FDFDFD;
 }
+
+/* Character Selection Page */
+.character-container {
+    background-color: black;
+    border-color: #383838;
+    border-width: 1.5px;
+    height: 50px;
+    width: 50px;
+}
