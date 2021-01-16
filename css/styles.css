@@ -1,0 +1,142 @@
+body {
+    background-color: black;
+}
+
+.launch-screen {
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+}
+
+.closeOverlay {
+    padding-bottom: 40px;
+}
+.close {
+    color: rgb(212, 212, 212);
+    float: right;
+    font-size: 60px;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.quote-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    background-image: url(/images/Ellipse.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.quote-span {
+    font-family: Abril Fatface;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 55px;
+    line-height: 74px;
+    color: #F9F9F9;
+}
+
+.quote-text {
+    font-family: Abril Fatface;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 65px;
+    line-height: 80px;
+    color: rgba(255, 255, 255, 0.6);
+    vertical-align: middle;
+}
+
+.quote-author {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    font-family: New York Extra Large;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 36px;
+    color: #F9F9F9;
+}
+
+.home-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.home-text {
+    width: 80%;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home-img {
+    position: absolute;
+    z-index: -100;
+    right: -5%;
+    bottom: 10%;
+}
+
+.mother-img {
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    right: -5%;
+}
+
+.hero-h1 {
+    font-family: Abril Fatface;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 70px;
+    line-height: 94px;
+    color: #F9F9F9;
+}
+
+.hero-h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 47px;
+    color: #FDFDFD;
+}
+
+.hero-p1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    color: #FFFFFF;
+}
+
+.hero-p2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 150%;
+    color: #FDFDFD;
+}
