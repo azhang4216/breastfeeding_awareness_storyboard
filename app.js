@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", (_req, res) => {
-    res.render("selection", {dummyVariable: "bababuba"});
+    res.render("selection", {dummyVariable: "diff"});
 })
 
 app.post("/", (req, _res) => {
