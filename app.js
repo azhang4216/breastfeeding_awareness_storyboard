@@ -198,15 +198,26 @@ app.get("/choose-your-own-adventure-:questionNumber", (req, res) => {
     }
 });
 
-app.post("/advanceQuestion", (req, res) => {
+app.post("/advance-question", (req, res) => {
     const questionNumber = req.body.questionNumber;
     const nextQuestion = parseInt(questionNumber) + 1;
 
     res.redirect("/choose-your-own-adventure-" + nextQuestion.toString());
 });
 
-app.get("/play-again", (_req, res) => {
-    res.sendFile(__dirname + "/index.html");
+app.post("/back-question", (req, res) => {
+    const questionNumber = req.body.questionNumber;
+    const prevQuestion = parseInt(questionNumber) - 1;
+
+    if (prevQuestion === 0) {
+        res.redirect("/character-page");
+    } else {
+        res.redirect("/choose-your-own-adventure-" + prevQuestion.toString());
+    }
+});
+
+app.post("/play-again", (_req, res) => {
+    res.redirect("/character-page");
 });
 
 app.get('*', (_req, res) => {

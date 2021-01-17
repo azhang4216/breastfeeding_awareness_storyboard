@@ -3,8 +3,20 @@
 <body>
     <div id="game-container">
         <div id="navigation-opts">
-            <p>Go Back</p>
-            <p>Start Over</p>
+            <form action="/back-question" method="post">
+                <button id="navigation-btn" action="submit" name="questionNumber" value=<%= questionNumber %>>
+                    <i class="fas fa-arrow-left"></i>
+                    <a></a>
+                    <p>Go Back</p>
+                </button>
+            </form>
+            <form action="/play-again" method="post">
+                <button id="navigation-btn" action="submit">
+                    <i class="fas fa-redo"></i>
+                    <a></a>
+                    <p>Start Over</p>
+                </button>
+            </form>            
         </div>
 
         <h4 class=<%= selectedMom.id %>><%= selectedMom.name %>'s Experience</h4>
@@ -25,7 +37,7 @@
             </div>
         </div>
 
-        <form action="/advanceQuestion" method="post">
+        <form action="/advance-question" method="post">
             <button id="next-btn" class="animated-button" action="submit" name="questionNumber" value=<%= questionNumber %>>next</button>
         </form>
     </div>

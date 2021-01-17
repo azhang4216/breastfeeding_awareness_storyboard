@@ -232,6 +232,27 @@ h4 {
     justify-content: space-between;
 }
 
+#game-container #navigation-opts #navigation-btn {
+    display: inline-flex;
+    border: 2px solid black;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+#game-container #navigation-opts #navigation-btn a {
+    margin-left: 5px;
+}
+
+#game-container #navigation-opts #navigation-btn:hover {
+    border-bottom: 2px solid white;
+}
+
+#game-container #navigation-opts #navigation-btn i {
+    color: white;
+    margin-top: 14px;
+}
+
 #game-container #selections {
     display: flex;
     flex-direction: column;
