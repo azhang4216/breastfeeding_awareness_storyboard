@@ -519,6 +519,13 @@ h4 {
     cursor: pointer;
 }
 
+#game-container .chosen {
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
 #game-container .unavailable {
     background-color: black;
     color: #757575;
