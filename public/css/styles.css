@@ -46,6 +46,126 @@ h4 {
     margin: auto;
     width: 100vw;
     height: 100vh;
+    animation: fadeOut 3s;
+}
+
+.end {
+    margin: auto;
+    width: 100vw;
+    height: auto;
+}
+
+.padding-top-extra {
+    padding-top: 125px;
+}
+
+.vertical-flexbox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    padding-top: 8%;
+    background-image: url(/images/4in1.png);
+    background-repeat: no-repeat;
+    background-size: 600px 600px;
+    background-position: center 15%;
+}
+
+.resources-block {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(5, 1fr);
+    column-gap: 48px;
+    row-gap: 48px;
+    grid-template-areas: 
+        "res1-text res1-buttons"
+        "res2-text res2-buttons"
+        "res3-text res3-buttons"
+        "res4-text res4-buttons"
+        "res5-text res5-buttons";
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.res1-text {
+    grid-area: res1-text;
+}
+
+.buttons-block1 {
+    grid-area: res1-buttons;
+    align-content: space-between;
+}
+
+.res2-text {
+    grid-area: res2-text;
+}
+
+.buttons-block2 {
+    grid-area: res2-buttons;
+}
+
+.res3-text {
+    grid-area: res3-text;
+}
+
+.buttons-block3 {
+    grid-area: res3-buttons;
+}
+
+.res4-text {
+    grid-area: res4-text;
+}
+
+.buttons-block4 {
+    grid-area: res4-buttons;
+}
+
+.res5-text {
+    grid-area: res5-text;
+}
+
+.buttons-block5 {
+    grid-area: res5-buttons;
+}
+
+.resources-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 160%;
+    color: #f9f9f9a2;
+}
+
+.buttons-block {
+    display: flex;
+    justify-content: flex-start;
+    
+}
+.res-span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 150%;
+    color: #ffffff;
+}
+
+.padding-top {
+    padding-top: 40px;
+}
+
+.hero-h1-extra-large-font {
+    font-family: Abril Fatface;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100px;
+    line-height: 40px;
+    color: #FFFFFF;
 }
 
 .modal {
@@ -56,8 +176,58 @@ h4 {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: black;
+}
+
+.button-start {
+    background-color: #ffffff; /* Green */
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+    margin-top: 20px;
+}
+
+.learn-more-button {
+    background-color: #ffffff; /* Green */
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 12px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.button-outline {
+    background-color: #ffffff00; /* Green */
+    border: 1px solid #FFFFFF;
+    color: rgb(255, 255, 255);
+    padding: 12px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 20px;
+    margin-left: 20px;
+    cursor: pointer;
 }
 
 .closeOverlay {
@@ -131,6 +301,13 @@ h4 {
   flex-direction: column;
   justify-content: center;
 }
+
+.end-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
 .home-img {
     position: absolute;
     z-index: -100;
@@ -150,17 +327,34 @@ h4 {
     font-style: normal;
     font-weight: normal;
     font-size: 70px;
-    line-height: 94px;
+    line-height: 50px;
     color: #F9F9F9;
+    margin-top: 20px;
 }
+
+
 
 .hero-h2 {
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    font-size: 40px;
-    line-height: 47px;
+    font-size: 30px;
+    line-height: 10px;
     color: #FDFDFD;
+}
+
+.text-box {
+    width: 100%;
+}
+
+.hero-h3 {
+    font-family: Abril Fatface;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 50px;
+    color: #FDFDFD;
+    margin-top: 0px;
 }
 
 .hero-p1 {
@@ -170,26 +364,53 @@ h4 {
     font-size: 30px;
     line-height: 35px;
     color: #FFFFFF;
+    padding-top: 50px;
 }
 
 .hero-p2 {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 25px;
+    font-size: 22px;
+    line-height: 160%;
+    color: #FDFDFD;
+}
+
+.start-box {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.start-link {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
     line-height: 150%;
     color: #FDFDFD;
+    text-decoration: none;
+}
+
+.end-img {
+    position: absolute;
+    z-index: -100;
+    width: 30%;
 }
 
 /* Character Selection Page */
 .character-container {
-    /* border-color: #383838; */
+    position: relative;
     border-style: solid;
     border-color: white;
     border-width: 2px;
     padding: 20px;
     width: 400px;
     margin-right: 30px;
+    margin-top: 30px;
+}
+
+.character-container button {
+    visibility: hidden;
 }
 
 .character-container:hover {
@@ -205,11 +426,34 @@ h4 {
     color: black;
 }
 
-.circle{
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    background-color: "#FF602E";
+.character-container:hover button{
+    visibility: visible;
+    background-color: white;
+    border: none;
+    float: right;
+}
+
+.character-container:hover .circle{
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 125px;
+    height: 125px;
+    border-radius: 125px;
+    background-color: #FF602E;
+    z-index: -2;
+}
+
+.character-container:hover .shade-circle{
+    position: absolute;
+    right: -50px;
+    top:70%;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    background-color: rgba(255, 103, 70, 0.31);
+    filter: blur(60px);
+    z-index: -2;
 }
 
 .row{
