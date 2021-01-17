@@ -13,7 +13,7 @@ app.get("/", (_req, res) => {
 
 let motherList = [
     {name:"Lorraine", budget:"140k", maritalStatus:"Married",numChildren:"1",occupation:"Coporate",education:"College",parentsLoc:"Out-of-state"},
-    {name:"Riley", budget:"85k", maritalStatus:"Married",numChildren:"3",occupation:"Ph. Therapist",education:"College",parentsLoc:"Close by"},
+    {name:"Riley", budget:"85k", maritalStatus:"Married",numChildren:"3",occupation:"Ph. Therapist",education:"College",parentsLoc:"Out-of-state"},
     {name:"Ashley", budget:"30k", maritalStatus:"Single",numChildren:"1",occupation:"Receptionist",education:"High School",parentsLoc:"Out-of-state"},
     {name:"Catherine", budget:"15k", maritalStatus:"Married",numChildren:"1",occupation:"Cashier",education:"Middle School",parentsLoc:"Out-of-state"},
 ]

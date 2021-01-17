@@ -1,30 +1,31 @@
-<%- include("header") -%>
+<%- include('header') -%>
 
 <% const renderMoms = (mom) => { %>
-  <div class="character-container">
+  <div class="circle"></div>
+  <div type='button' onclick='chooseMom()' id='<%= mom.name %>' class='character-container'>
     <h3><%= mom.name %></h3>
     <div>
-      <div class="row">
+      <div class='row flexInbetween'>
         <p>Budget:</p>
         <p><%= mom.budget %></p>
       </div>
-      <div class="row">
+      <div class='row flexInbetween'>
         <p>Marital Status:</p>
         <p><%= mom.maritalStatus %></p>
       </div>
-      <div class="row">
+      <div class='row flexInbetween'>
         <p># of children:</p>
         <p><%= mom.numChildren %></p>
       </div>
-      <div class="row">
+      <div class='row flexInbetween'>
         <p>Occupation:</p>
         <p><%= mom.occupation %></p>
       </div>
-      <div class="row">
+      <div class='row flexInbetween'>
         <p>Education Level:</p>
         <p><%= mom.education %></p>
       </div>
-      <div class="row">
+      <div class='row flexInbetween'>
         <p>Parents location:</p>
         <p><%= mom.parentsLoc %></p>
       </div>
@@ -34,13 +35,57 @@
 
 
 <body>
+  <div class='container'>
     <h2>Start your experience as...</h2>
-    <div>
+    <div class='row slider'>
       <% momList.forEach(mom =>{ %>
         <%= renderMoms(mom); %>
       <% }) %>
     </div>
-
+  </div>
 </body>
 
-<%- include("footer") -%>
+<!-- <script>
+  function chooseMom(){
+    const characterContainer = document.getElementById("Catherine");
+    if (characterContainer){
+        characterContainer.addEventListener("click", function() {
+          characterContainer.className = 'character-container2'
+          console.log(characterContainer)
+          console.log('gere')}
+        );
+      }
+    }
+</script> -->
+
+<script>
+  // tutorial from https://www.youtube.com/watch?v=C9EWifQ5xqA
+  const slider = document.querySelector('.slider');
+  let startPos;
+  let isDown = false;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', (e) =>{
+    isDown = true;
+    startPos = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft
+  });
+
+  slider.addEventListener('mousemove', (e) =>{
+    e.preventDefault();
+    if(isDown){
+      const x = e.pageX - slider.offsetLeft;
+      const distance = x - startPos;
+      slider.scrollLeft += distance;
+      console.log(slider);
+    }
+  });
+
+  slider.addEventListener('mouseleave', () =>{
+    isDown = false;
+  });
+
+  slider.addEventListener('mouseup', () =>{
+    isDown = false;
+  });
+</script>
