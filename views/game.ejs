@@ -28,7 +28,7 @@
                 <% selections.forEach((selection) => { %>
                     <button class=<%- selection.available.includes(selectedMom.id) ? 'available' : 'unavailable' %>
                         id="choice">
-                        <p id="choice-text"><%= selection.choice %></p>
+                        <div id="choice-text"><%= selection.choice %></div>
                     </button>
                 <% }); %>
             </div>

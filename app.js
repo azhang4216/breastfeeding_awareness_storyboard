@@ -60,7 +60,7 @@ const storyboard = [
         selections: [
             {
                 choice: "Your partner",
-                available: ["A", "C"]
+                available: ["A", "C", "D"]
             },
             {
                 choice: "A professional nanny",

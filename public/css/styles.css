@@ -256,6 +256,7 @@ h4 {
 #game-container #selections {
     display: flex;
     flex-direction: column;
+    flex-basis: 70%;
 }
 
 #game-container #selections A {
@@ -264,12 +265,16 @@ h4 {
 }
 
 #game-container .available {
-    background-color: #4CAF50;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
     cursor: pointer;
 }
 
 #game-container .unavailable {
-    background-color: red;
+    background-color: black;
+    color: #757575;
+    border: 2px solid #757575;
     pointer-events: none;
 }
 
@@ -278,11 +283,15 @@ h4 {
     justify-content: space-between;
 }
 
-#choice {
+#game-container #choice {
     font-size: 25px;
     font-weight: 700;
     line-height: 30px;
     margin-top: 20px;
+}
+
+#game-container #choice #choice-text {
+    margin: 25px 15px;
 }
 
 #game-container .A {
