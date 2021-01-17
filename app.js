@@ -106,50 +106,50 @@ const storyboard = [
 
 const motherList = [
     {
-        id:"A", 
-        name:"Lorraine", 
-        budget:"140k", 
-        maritalStatus:"Married",
-        numChildren:"1",
-        occupation:"Coporate",
-        education:"College",
-        parentsLoc:"Out-of-state"
+        id: "A", 
+        name: "Lorraine", 
+        budget: "140k", 
+        maritalStatus: "Married",
+        numChildren: "1",
+        occupation: "Coporate",
+        education: "College",
+        parentsLoc: "Out-of-state"
     },
     {
-        id:"B", 
-        name:"Ashley", 
-        budget:"30k", 
-        maritalStatus:"Single",
-        numChildren:"1",
-        occupation:"Receptionist",
-        education:"High School",
-        parentsLoc:"Out-of-state"
+        id: "B", 
+        name: "Ashley", 
+        budget: "30k", 
+        maritalStatus: "Single",
+        numChildren: "1",
+        occupation: "Receptionist",
+        education: "High School",
+        parentsLoc: "Out-of-state"
     },
     {
-        id:"C", 
-        name:"Riley", 
-        budget:"85k", 
-        maritalStatus:"Married",
-        numChildren:"3",
-        occupation:"Ph. Therapist",
-        education:"College",
-        parentsLoc:"Out-of-state"
+        id: "C", 
+        name: "Riley", 
+        budget: "85k", 
+        maritalStatus: "Married",
+        numChildren: "3",
+        occupation: "Ph. Therapist",
+        education: "College",
+        parentsLoc: "Out-of-state"
     },
     {
-        id:"D", 
-        name:"Catherine", 
-        budget:"15k", 
-        maritalStatus:"Married",
-        numChildren:"1",
-        occupation:"Cashier",
-        education:"Middle School",
-        parentsLoc:"Out-of-state"
+        id: "D", 
+        name: "Catherine", 
+        budget: "15k", 
+        maritalStatus: "Married",
+        numChildren: "1",
+        occupation: "Cashier",
+        education: "Middle School",
+        parentsLoc: "Out-of-state"
     },
 ];
 
 let selectedMom = {
-    id:String,
-    name:String,
+    id: String,
+    name: String,
 };
 
 app.get("/", (_req, res) => {
@@ -167,9 +167,8 @@ app.get("/characterPage", (_req, res) => {
 app.post("/selectMom", (req, res) => {
     var selectedMomInfo = [];
     selectedMomInfo = req.body.selectedMom.split('-');
-    selectedMom.id = selectedMomInfo[0]
-    selectedMom.name = selectedMomInfo[1] 
-    console.log(selectedMom);
+    selectedMom.id = selectedMomInfo[0];
+    selectedMom.name = selectedMomInfo[1]; 
     res.redirect("/choose-your-own-adventure-1");
 })
 
