@@ -2,7 +2,7 @@
 
 <% const renderMoms = (mom) => { %>
   <div class="circle"></div>
-  <div type='button' onclick='chooseMom()' id='<%= mom.name %>' class='character-container'>
+  <div id='<%= mom.name %>' class='character-container'>
     <h3><%= mom.name %></h3>
     <div>
       <div class='row flexInbetween'>
@@ -30,6 +30,9 @@
         <p><%= mom.parentsLoc %></p>
       </div>
     </div>
+    <form action="/selectMom" method="post">
+      <button action="submit" name="selectedMom" value=<%- mom.id + "-" + mom.name %>>next</button>
+    </form>
   </div>
 <% } %>
 
