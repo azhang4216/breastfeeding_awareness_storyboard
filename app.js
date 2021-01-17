@@ -147,58 +147,72 @@ const motherList = [
     },
 ];
 
-let selectedMom = {
-    id: String,
-    name: String,
+class Mom { // constructor for selecting moms
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
 };
+
+let selectedMom; // global selected mom
 
 app.get("/", (_req, res) => {
     res.sendFile(__dirname + "/index.html");
-})
+});
 
 app.post("/", (_req, res) => {
-    res.redirect("/characterPage");
-})
+    res.redirect("/character-page");
+});
 
-app.get("/characterPage", (_req, res) => {
+app.get("/character-page", (_req, res) => {
     res.render("characterPage", {momList: motherList});
-})
+});
 
 app.post("/selectMom", (req, res) => {
     var selectedMomInfo = [];
     selectedMomInfo = req.body.selectedMom.split('-');
-    selectedMom.id = selectedMomInfo[0];
-    selectedMom.name = selectedMomInfo[1]; 
+    selectedMom = new Mom(selectedMomInfo[0], selectedMomInfo[1])
+
     res.redirect("/choose-your-own-adventure-1");
-})
+});
 
 app.get("/choose-your-own-adventure-:questionNumber", (req, res) => {
     const questionNumber = req.params.questionNumber;
     const currentStory = storyboard[questionNumber - 1];
+    const maxQuestionNumber = storyboard.length;
 
-    res.render("game", {
-        selectedMom: selectedMom,
-        prompt: currentStory.prompt,
-        selections: currentStory.selections,
-        questionNumber: questionNumber
-    });
-})
+    if (!questionNumber || questionNumber > maxQuestionNumber + 1 || 
+        questionNumber < 1 || questionNumber === parseInt(questionNumber, 10)) { // invalid entries; go to 404 page
+        res.render("error");
+    } else if (!selectedMom) { // mom character has yet to be selected; unable to continue / start game
+        res.redirect("/character-page");
+    } else if (questionNumber === maxQuestionNumber + 1) { // end of the game, should move to closing page
+        res.sendFile(__dirname + "/close.html");
+    } else {
+        res.render("game", { // proceed to appropriate game question
+            selectedMom: selectedMom,
+            prompt: currentStory.prompt,
+            selections: currentStory.selections,
+            questionNumber: questionNumber
+        });
+    }
+});
 
 app.post("/advanceQuestion", (req, res) => {
     const questionNumber = req.body.questionNumber;
     const nextQuestion = parseInt(questionNumber) + 1;
 
-    if (nextQuestion === storyboard.length + 1) {
-        res.sendFile(__dirname + "/close.html");
-    } else {
-        res.redirect("/choose-your-own-adventure-" + nextQuestion.toString());
-    }
-})
+    res.redirect("/choose-your-own-adventure-" + nextQuestion.toString());
+});
 
 app.get("/play-again", (_req, res) => {
     res.sendFile(__dirname + "/index.html");
-})
+});
+
+app.get('*', (_req, res) => {
+    res.render("error");
+});
 
 app.listen(3000, () => {
-    console.log("Server has started successfully.")
-})
+    console.log("Server has started successfully.");
+});

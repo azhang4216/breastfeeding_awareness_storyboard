@@ -201,9 +201,11 @@ h3{
     justify-content: space-between;
 }
 
+/* choose your own adventure game page */
 
-
-/* choose your own adventure game classes */
+#gameContainer {
+    padding-left: 50px 100px;
+}
 
 .available {
     background-color: #4CAF50;

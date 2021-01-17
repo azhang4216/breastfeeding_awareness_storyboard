@@ -1,20 +1,21 @@
 <%- include("header") -%>
 
 <body>
-    <p><%= selectedMom.name %>'s Experience</p>
+    <div id="gameContainer">
+        <p><%= selectedMom.name %>'s Experience</p>
     
-    <h1><%= prompt %></h1>
+        <h1><%= prompt %></h1>
 
-    <% selections.forEach((selection) => { %>
-        <div class=<%- selection.available.includes(selectedMom.id) ? 'available' : 'unavailable' %>>
-            <%= selection.choice %>
-        </div>
-    <% }); %>
+        <% selections.forEach((selection) => { %>
+            <div class=<%- selection.available.includes(selectedMom.id) ? 'available' : 'unavailable' %>>
+                <%= selection.choice %>
+            </div>
+        <% }); %>
 
-    <form action="/advanceQuestion" method="post">
-        <button action="submit" name="questionNumber" value=<%= questionNumber %>>next</button>
-    </form>
-
+        <form action="/advanceQuestion" method="post">
+            <button action="submit" name="questionNumber" value=<%= questionNumber %>>next</button>
+        </form>
+    </div>
 </body>
 
 <%- include("footer") -%>
