@@ -13,6 +13,11 @@ body {
     padding: 0;
 }
 
+::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent; 
+}
+
 h1 {
     color: white;
     font-size: 40px;
@@ -49,9 +54,16 @@ h4 {
     margin: auto;
     width: 100vw;
     height: 100vh;
-    animation: fadeOut 3s;
     overflow: hidden;
     position: relative;
+}
+
+.error-block {
+    margin:auto;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    
 }
 
 .end {
@@ -182,6 +194,54 @@ h4 {
     width: 100%;
     height: 100%;
     background-color: black;
+}
+
+.error-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+    height: 100%;
+}
+
+.error-text-h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    font-size: 250px;
+    line-height: 50px;
+    color: #FF532E;
+}
+
+.error-text-h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 59px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: -60px;
+}
+
+.error-text-h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 40px;
+    margin-top: -10px;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    max-width: 50%;
+}
+
+.error-text-h3:hover {
+    text-decoration: underline;
 }
 
 .button-start {
@@ -335,6 +395,7 @@ h4 {
     line-height: 80px;
     color: #F9F9F9;
     margin-top: 20px;
+    max-width: 75%;
 }
 
 
@@ -378,6 +439,9 @@ h4 {
     font-size: 22px;
     line-height: 160%;
     color: #FDFDFD;
+}
+
+.p-max-width {
     max-width: 55%;
 }
 
@@ -453,10 +517,10 @@ h4 {
     position: absolute;
     right: -50px;
     top:70%;
-    width: 200px;
-    height: 200px;
-    border-radius: 200px;
-    background-color: rgba(255, 103, 70, 0.31);
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
+    background: radial-gradient(46.45% 46.45% at 55.19% 50%, rgba(255, 103, 70, 0.31) 0%, rgba(255, 103, 70, 0) 100%);
     filter: blur(60px);
     z-index: -2;
 }
