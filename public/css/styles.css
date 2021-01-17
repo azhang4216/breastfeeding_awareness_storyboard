@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: white;
 }
 
 .launch-screen {
@@ -139,4 +139,14 @@ body {
     font-size: 25px;
     line-height: 150%;
     color: #FDFDFD;
+}
+
+/* choose your own adventure game classes */
+
+.available {
+    background-color: #4CAF50;
+}
+
+.unavailable {
+    background-color: red;
 }
