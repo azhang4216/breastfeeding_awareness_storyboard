@@ -23,6 +23,5 @@
     "jquery": "^3.5.1",
     "nodemon": "^2.0.7"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

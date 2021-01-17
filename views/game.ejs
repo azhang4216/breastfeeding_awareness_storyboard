@@ -1,20 +1,46 @@
 <%- include("header") -%>
 
 <body>
-    <p><%= selectedMom.name %>'s Experience</p>
-    
-    <h1><%= prompt %></h1>
-
-    <% selections.forEach((selection) => { %>
-        <div class=<%- selection.available.includes(selectedMom.id) ? 'available' : 'unavailable' %>>
-            <%= selection.choice %>
+    <div id="game-container">
+        <div id="navigation-opts">
+            <form action="/back-question" method="post">
+                <button id="navigation-btn" action="submit" name="questionNumber" value=<%= questionNumber %>>
+                    <i class="fas fa-arrow-left"></i>
+                    <a></a>
+                    <p>Go Back</p>
+                </button>
+            </form>
+            <form action="/play-again" method="post">
+                <button id="navigation-btn" action="submit">
+                    <i class="fas fa-redo"></i>
+                    <a></a>
+                    <p>Start Over</p>
+                </button>
+            </form>            
         </div>
-    <% }); %>
 
-    <form action="/advanceQuestion" method="post">
-        <button action="submit" name="questionNumber" value=<%= questionNumber %>>next</button>
-    </form>
+        <h4 class=<%= selectedMom.id %>><%= selectedMom.name %>'s Experience</h4>
+    
+        <h1><%= prompt %></h1>
 
+        <div id="choices-container">
+            <div id="selections">
+                <% selections.forEach((selection) => { %>
+                    <button class=<%- selection.available.includes(selectedMom.id) ? 'available' : 'unavailable' %>
+                        id="choice">
+                        <div id="choice-text"><%= selection.choice %></div>
+                    </button>
+                <% }); %>
+            </div>
+            <div id="circle-container">
+                <span class="circle" id=<%= selectedMom.id %>></span>
+            </div>
+        </div>
+
+        <form action="/advance-question" method="post">
+            <button id="next-btn" class="animated-button" action="submit" name="questionNumber" value=<%= questionNumber %>>next</button>
+        </form>
+    </div>
 </body>
 
-<%- include("footer") -%>
+</html>
