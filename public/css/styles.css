@@ -1,5 +1,13 @@
+:root {
+    --momA: #FF602E;
+    --momB: #BDFF00;
+    --momC: #4B2EFF;
+    --momD: #00C2FF;
+  }
+
 body {
     background-color: black;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -25,7 +33,6 @@ h3{
 }
 
 h4 {
-    color: #FF602E;
     font-size: 25px;
 }
 
@@ -225,12 +232,24 @@ h4 {
     justify-content: space-between;
 }
 
+#game-container #selections {
+    display: flex;
+    flex-direction: column;
+}
+
+#game-container #selections A {
+    display: flex;
+    flex-direction: column;
+}
+
 #game-container .available {
     background-color: #4CAF50;
+    cursor: pointer;
 }
 
 #game-container .unavailable {
     background-color: red;
+    pointer-events: none;
 }
 
 #game-container #choices-container {
@@ -242,12 +261,44 @@ h4 {
     font-size: 25px;
     font-weight: 700;
     line-height: 30px;
+    margin-top: 20px;
 }
 
-#game-container #choices-container #circle-container #circle {
+#game-container .A {
+    color: var(--momA);
+}
+
+#game-container #A {
+    background-color: var(--momA);
+}
+
+#game-container .B {
+    color: var(--momB);
+}
+
+#game-container #B {
+    background-color: var(--momB);
+}
+
+#game-container .C {
+    color: var(--momC);
+}
+
+#game-container #C {
+    background-color: var(--momC);
+}
+
+#game-container .D {
+    color: var(--momD);
+}
+
+#game-container #D {
+    background-color: var(--momD);
+}
+
+#game-container #choices-container #circle-container .circle {
     width: 225px;
     height: 225px;
-    background-color: #FF602E;
     border-radius: 50%;
     display: inline-block;
 }

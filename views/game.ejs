@@ -7,21 +7,21 @@
             <p>Start Over</p>
         </div>
 
-        <h4><%= selectedMom.name %>'s Experience</h4>
+        <h4 class=<%= selectedMom.id %>><%= selectedMom.name %>'s Experience</h4>
     
         <h1><%= prompt %></h1>
 
         <div id="choices-container">
             <div id="selections">
                 <% selections.forEach((selection) => { %>
-                    <div class=<%- selection.available.includes(selectedMom.id) ? 'available' : 'unavailable' %>
+                    <button class=<%- selection.available.includes(selectedMom.id) ? 'available' : 'unavailable' %>
                         id="choice">
                         <p id="choice-text"><%= selection.choice %></p>
-                    </div>
+                    </button>
                 <% }); %>
             </div>
             <div id="circle-container">
-                <span id="circle"></span>
+                <span class="circle" id=<%= selectedMom.id %>></span>
             </div>
         </div>
 
