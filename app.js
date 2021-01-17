@@ -186,7 +186,7 @@ app.get("/choose-your-own-adventure-:questionNumber", (req, res) => {
     } else if (!selectedMom) { // mom character has yet to be selected; unable to continue / start game
         res.redirect("/character-page");
     } else if (parseInt(questionNumber) === maxQuestionNumber + 1) { // end of the game, should move to closing page
-        res.sendFile(__dirname + "/end.html");
+        res.redirect("/ending");
     } else {
         const currentStory = storyboard[questionNumber - 1];
         res.render("game", { // proceed to appropriate game question
@@ -219,6 +219,10 @@ app.post("/back-question", (req, res) => {
 app.post("/play-again", (_req, res) => {
     res.redirect("/character-page");
 });
+
+app.get("/ending", (req, res) => {
+    res.sendFile(__dirname + "/end.html");
+})
 
 app.get('*', (_req, res) => {
     res.render("error");
