@@ -178,7 +178,6 @@ app.post("/selectMom", (req, res) => {
 
 app.get("/choose-your-own-adventure-:questionNumber", (req, res) => {
     const questionNumber = req.params.questionNumber;
-    const currentStory = storyboard[questionNumber - 1];
     const maxQuestionNumber = storyboard.length;
 
     if (!questionNumber || questionNumber > maxQuestionNumber + 1 || 
@@ -186,9 +185,10 @@ app.get("/choose-your-own-adventure-:questionNumber", (req, res) => {
         res.render("error");
     } else if (!selectedMom) { // mom character has yet to be selected; unable to continue / start game
         res.redirect("/character-page");
-    } else if (questionNumber === maxQuestionNumber + 1) { // end of the game, should move to closing page
+    } else if (parseInt(questionNumber) === maxQuestionNumber + 1) { // end of the game, should move to closing page
         res.sendFile(__dirname + "/close.html");
     } else {
+        const currentStory = storyboard[questionNumber - 1];
         res.render("game", { // proceed to appropriate game question
             selectedMom: selectedMom,
             prompt: currentStory.prompt,
