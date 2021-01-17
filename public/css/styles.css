@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: white;
 }
 
 h2 {
@@ -161,6 +161,7 @@ h3{
     color: #FDFDFD;
 }
 
+<<<<<<< HEAD:public/css/styles.css
 /* Character Selection Page */
 .character-container {
     /* border-color: #383838; */
@@ -203,3 +204,14 @@ h3{
 
 
 
+=======
+/* choose your own adventure game classes */
+
+.available {
+    background-color: #4CAF50;
+}
+
+.unavailable {
+    background-color: red;
+}
+>>>>>>> 643fd245fa8c1826ea656e15957e29da5de3eb23:css/styles.css
