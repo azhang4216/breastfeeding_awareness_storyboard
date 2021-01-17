@@ -1,5 +1,25 @@
 body {
-    background-color: white;
+    background-color: black;
+}
+
+h2 {
+    color: white;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+p {
+    color: white;
+}
+
+h3{
+    color: white;
+}
+
+.container{
+    height: 100%;
+    margin-left: 10%;
+    margin-top: 10%;
 }
 
 .launch-screen {
@@ -140,6 +160,48 @@ body {
     line-height: 150%;
     color: #FDFDFD;
 }
+
+/* Character Selection Page */
+.character-container {
+    /* border-color: #383838; */
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    padding: 20px;
+    width: 400px;
+    margin-right: 30px;
+}
+
+.character-container:hover {
+    background-color: white;
+    color: black;
+}
+
+.character-container:hover p {
+    color: black;
+}
+
+.character-container:hover h3 {
+    color: black;
+}
+
+.circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: "#FF602E";
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.flexInbetween{
+    justify-content: space-between;
+}
+
+
 
 /* choose your own adventure game classes */
 
