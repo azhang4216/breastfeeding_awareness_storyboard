@@ -20,6 +20,87 @@ const storyboard = [
                 available: ["A", "B", "C", "D"]
             }
         ],
+    },
+    {
+        prompt: "You are 3-weeks postpartum and you have to decide when you will return to work…",
+        selections: [
+            {
+                choice: "After a paid 12-week maternity leave",
+                available: ["A"]
+            },
+            {
+                choice: "Return to work after 2 more weeks of paid leave",
+                available: ["A", "C"]
+            },
+            {
+                choice: "Go back to work immediately after a short unpaid maternity leave",
+                available: ["B", "D"]
+            }
+        ],
+    },
+    {
+        prompt: "Back at work, you feel your breasts getting full while on the clock, so you…",
+        selections: [
+            {
+                choice: "Ignore it and go back to work",
+                available: ["A", "B", "C", "D"]
+            },
+            {
+                choice: "Find an isolated place to pump",
+                available: ["A"]
+            },
+            {
+                choice: "Leave work during break to feed your baby without pumping",
+                available: ["A", "C"]
+            }
+        ],
+    },
+    {
+        prompt: "You need someone to watch your baby when you’re at work, so you ask…",
+        selections: [
+            {
+                choice: "Your partner",
+                available: ["A", "C"]
+            },
+            {
+                choice: "A professional nanny",
+                available: ["A"]
+            },
+            {
+                choice: "Your mother",
+                available: ["B"]
+            },
+            {
+                choice: "Your eldest child",
+                available: ["C"]
+            }
+        ],
+    },
+    {
+        prompt: "On your trip to the grocery store, your most expensive purchase is…",
+        selections: [
+            {
+                choice: "Formula",
+                available: ["B", "D"]
+            },
+            {
+                choice: "A nice cut of steak",
+                available: ["A", "C"]
+            }
+        ],
+    },
+    {
+        prompt: "At home, you come to realize that your biggest critic of your breastfeeding habits is your…",
+        selections: [
+            {
+                choice: "Husband",
+                available: ["A", "C", "D"]
+            },
+            {
+                choice: "Mother",
+                available: ["B"]
+            }
+        ],
     }
 ];
 
@@ -52,7 +133,15 @@ app.post("/advanceQuestion", (req, res) => {
     const questionNumber = req.body.questionNumber;
     const nextQuestion = parseInt(questionNumber) + 1;
 
-    res.redirect("/choose-your-own-adventure-" + nextQuestion.toString());
+    if (nextQuestion === storyboard.length + 1) {
+        res.sendFile(__dirname + "/close.html");
+    } else {
+        res.redirect("/choose-your-own-adventure-" + nextQuestion.toString());
+    }
+})
+
+app.get("/play-again", (_req, res) => {
+    res.sendFile(__dirname + "/index.html");
 })
 
 app.listen(3000, () => {
