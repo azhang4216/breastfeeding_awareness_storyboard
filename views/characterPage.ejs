@@ -1,12 +1,12 @@
 <%- include('header') -%>
 
 <% const renderMoms = (mom) => { %>
-  <div class="circle"></div>
   <div id='<%= mom.name %>' class='character-container'>
+    <div class="circle"></div>
     <h3><%= mom.name %></h3>
     <div>
       <div class='row flexInbetween'>
-        <p>Budget:</p>
+        <p>Salary:</p>
         <p><%= mom.budget %></p>
       </div>
       <div class='row flexInbetween'>
@@ -31,8 +31,9 @@
       </div>
     </div>
     <form action="/selectMom" method="post">
-      <button action="submit" name="selectedMom" value=<%- mom.id + "-" + mom.name %>>next</button>
+      <button class="arrow" action="submit" name="selectedMom" value=<%- mom.id + "-" + mom.name %>>-></button>
     </form>
+    <div class="shade-circle"></div>
   </div>
 <% } %>
 
@@ -47,19 +48,6 @@
     </div>
   </div>
 </body>
-
-<!-- <script>
-  function chooseMom(){
-    const characterContainer = document.getElementById("Catherine");
-    if (characterContainer){
-        characterContainer.addEventListener("click", function() {
-          characterContainer.className = 'character-container2'
-          console.log(characterContainer)
-          console.log('gere')}
-        );
-      }
-    }
-</script> -->
 
 <script>
   // tutorial from https://www.youtube.com/watch?v=C9EWifQ5xqA
