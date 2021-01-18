@@ -13,11 +13,6 @@ body {
     padding: 0;
 }
 
-::-webkit-scrollbar {
-    width: 0px; 
-    background: transparent; 
-}
-
 h1 {
     color: white;
     font-size: 40px;
@@ -242,6 +237,12 @@ h4 {
 
 .error-text-h3:hover {
     text-decoration: underline;
+}
+
+#go-back-btn {
+    background: none;
+    cursor: pointer;
+    border: none;
 }
 
 .button-start {
@@ -585,29 +586,35 @@ h4 {
     margin-left: 5px;
 }
 
+#game-container #navigation-opts #navigation-btn p {
+    font-size: 18px;
+}
+
 #game-container #navigation-opts #navigation-btn:hover {
     border-bottom: 2px solid white;
 }
 
 #game-container #navigation-opts #navigation-btn i {
     color: white;
-    margin-top: 14px;
+    margin-top: 21px;
 }
 
 #game-container #selections {
     display: flex;
     flex-direction: column;
-    flex-basis: 70%;
-}
-
-#game-container #selections A {
-    display: flex;
-    flex-direction: column;
+    /* flex-basis: 50%; */
 }
 
 #game-container .available {
     background-color: black;
     color: white;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+#game-container .selected {
+    background-color: white;
+    color: black;
     border: 2px solid white;
     cursor: pointer;
 }
@@ -624,11 +631,12 @@ h4 {
     justify-content: space-between;
 }
 
-#game-container #choice {
-    font-size: 25px;
-    font-weight: 700;
-    line-height: 30px;
+#game-container #selections button {
+    font-size: 18px;
+    line-height: 20px;
     margin-top: 20px;
+    padding: 20px 25px;
+    text-align: left;
 }
 
 #game-container #choice #choice-text {
@@ -672,6 +680,8 @@ h4 {
     height: 225px;
     border-radius: 50%;
     display: inline-block;
+    align-self: baseline;
+    z-index: -1;
 }
 
 #game-container #next-btn {
@@ -681,6 +691,23 @@ h4 {
     background: #FFFFFF;
     border: 1px solid #A8A8A8;
     box-sizing: border-box;
+    visibility: hidden;
+}
+
+#game-container .fact {
+    position: absolute;
+    width: 426px;
+    height: 212px;
+    left: 735px;
+    top: 366px;
+    background: black;
+    color: white;
+    backdrop-filter: blur(100px);
+    display: None;
+}
+
+.available:hover .fact {
+    display: block;
 }
 
 #game-container #next-btn {
