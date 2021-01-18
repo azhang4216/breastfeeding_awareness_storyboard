@@ -513,6 +513,34 @@ h4 {
     z-index: -2;
 }
 
+#Lorraine .circle{
+    background-color: var(--momA);
+}
+
+#Ashley .circle{
+    background-color: var(--momB);
+}
+
+#Riley .circle{
+    background-color: var(--momC);
+}
+
+#Catherine .circle{
+    background-color: #00C2FF;
+}
+
+#Ashley .shade-circle{
+    background-color: rgba(201, 255, 46, 0.31);
+}
+
+#Riley .shade-circle{
+    background-color: rgba(75, 46, 255, 0.31);
+}
+
+#Catherine .shade-circle{
+    background-color: rgba(0, 194, 255, 0.31);
+}
+
 .character-container:hover .shade-circle{
     position: absolute;
     right: -50px;
