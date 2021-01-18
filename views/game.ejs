@@ -1,5 +1,4 @@
 <%- include("header") -%>
-
 <body>
     <div id="game-container">
         <div id="navigation-opts">
@@ -47,8 +46,16 @@
             <button id="next-btn" class="animated-button" action="submit" name="questionNumber" value=<%= questionNumber %>>next</button>
         </form>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/choiceSelection.js"></script>
+    
+    <section class="mobile">
+        <div class="mobile-div">
+            <h1 class="mobile-h1">4MOMS</h1>
+            <img src="/images/4in1.png" class="fourinone" alt="4in1">
+            <h1 class="mobile-h2">We are sorry.</h1>
+            <h2 class="mobile-h3">This website is only viewable on desktop.</h2>
+        </div>
+      </section>
 </body>
 
 </html>

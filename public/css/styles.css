@@ -514,6 +514,34 @@ h4 {
     z-index: -2;
 }
 
+#Lorraine .circle{
+    background-color: var(--momA);
+}
+
+#Ashley .circle{
+    background-color: var(--momB);
+}
+
+#Riley .circle{
+    background-color: var(--momC);
+}
+
+#Catherine .circle{
+    background-color: #00C2FF;
+}
+
+#Ashley .shade-circle{
+    background-color: rgba(201, 255, 46, 0.31);
+}
+
+#Riley .shade-circle{
+    background-color: rgba(75, 46, 255, 0.31);
+}
+
+#Catherine .shade-circle{
+    background-color: rgba(0, 194, 255, 0.31);
+}
+
 .character-container:hover .shade-circle{
     position: absolute;
     right: -50px;
@@ -722,3 +750,83 @@ h4 {
 .animated-button:hover {
     opacity: 1;
 }
+
+.mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    body {
+        background-color: black;
+    }
+    .container {
+        display: none;
+    }
+    .launch-screen {
+        display: none;
+    }
+    .end {
+        display: none;
+    }
+    .character-container {
+        display: none;
+    }
+    #game-container {
+        display: none;
+    }
+    .mobile {
+        margin:auto;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        display: block;
+    }
+    .mobile-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        width: 80%;
+        height: 100%;
+    }
+
+    .fourinone {
+        max-width: 55%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mobile-h1 {
+        text-align: center;
+        font-family: Abril Fatface;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 5.2rem;
+        line-height: 50px;
+        color: #FFFFFF;
+        margin-bottom: 6%;
+    }
+    .mobile-h2 {
+        text-align: center;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 3.0rem;
+        line-height: 30px;
+        color: #FFFFFF;
+        margin-top: 6%;
+    }
+    .mobile-h3 {
+        text-align: center;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: lighter;
+        max-width: 75%;
+        font-size: 1.75rem;
+        line-height: 150%;
+        margin-top: 0;
+        color: #FFFFFF;
+    }
+}
+

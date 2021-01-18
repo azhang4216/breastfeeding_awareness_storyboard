@@ -14,8 +14,6 @@ const storyboard = [
             {
                 choice: "Exclusively breastfeed/pump",
                 available: ["A", "C"],
-                stat: "Women who are at least 30 years old and college educated are more likely to choose to exclusively breastfeed.",
-                link: "https://pubmed.ncbi.nlm.nih.gov/15579667/"
             },
             {
                 choice: "Use formula",
