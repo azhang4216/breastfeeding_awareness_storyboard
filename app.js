@@ -13,7 +13,9 @@ const storyboard = [
         selections: [
             {
                 choice: "Exclusively breastfeed/pump",
-                available: ["A", "C"]
+                available: ["A", "C"],
+                stat: "Women who are at least 30 years old and college educated are more likely to choose to exclusively breastfeed.",
+                link: "https://pubmed.ncbi.nlm.nih.gov/15579667/"
             },
             {
                 choice: "Use formula",
@@ -220,12 +222,16 @@ app.post("/play-again", (_req, res) => {
     res.redirect("/character-page");
 });
 
-app.get("/ending", (req, res) => {
+app.get("/ending", (_req, res) => {
     res.sendFile(__dirname + "/end.html");
+});
+
+app.post("/return-home", (_req, res) => {
+    res.redirect("/");
 })
 
 app.get('*', (_req, res) => {
-    res.render("error");
+    res.sendFile(__dirname + "/404.html");
 });
 
 app.listen(3000, () => {

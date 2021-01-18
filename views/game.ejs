@@ -25,12 +25,18 @@
 
         <div id="choices-container">
             <div id="selections">
-                <% selections.forEach((selection) => { %>
-                    <button class=<%- selection.available.includes(selectedMom.id) ? 'available' : 'unavailable' %>
-                        id="choice">
-                        <div id="choice-text"><%= selection.choice %></div>
+                <% for (var i = 0; i < selections.length; i++) { %>
+                    <button class=<%- selections[i].available.includes(selectedMom.id) ? "available" : "unavailable" %>
+                        id=<%- i %> onclick="selectButton(<%- i %>)">
+                        <div id="choice-text"><%= selections[i].choice %></div>
+                        <!-- <div class="fact">
+                            <p><%= selections[i].stat %></p>
+                            <a href=<%= selections[i].link %> target="__blank">
+                                <p>Learn More</p>
+                            </a>
+                        </div> -->
                     </button>
-                <% }); %>
+                <% }; %>
             </div>
             <div id="circle-container">
                 <span class="circle" id=<%= selectedMom.id %>></span>
@@ -41,6 +47,8 @@
             <button id="next-btn" class="animated-button" action="submit" name="questionNumber" value=<%= questionNumber %>>next</button>
         </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/choiceSelection.js"></script>
 </body>
 
 </html>
